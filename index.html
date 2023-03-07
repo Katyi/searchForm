@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="./css/style.css" rel="stylesheet">
   <title>Github repos search</title>
 </head>
 <body>
   <wrapper>
-    <container>
-      <form action="">
+    <container id="container">
+      <form id="searchForm" onsubmit="getRepos();return false">
         <span>Найти 10 репозиториев github</span>
-        <input type="text" id="searchWords" value = "" placeholder="Поиск" name="searchWords" required autocomplete="off">
-        <button>ПОИСК</button>
+        <input type="text" id="searchWord" value = "" placeholder="Поиск" required autocomplete="off">
+        <button type="submit" onsubmit="getRepos()">НАЙТИ</button>
       </form>
-      <div id="results"></div>
+      <div id="searchResults"></div>
     </container>
   </wrapper>
-  <script src="/js/script.js" ></script>
 </body>
+<script src="/js/script.js" ></script>
 </html>

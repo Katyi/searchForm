@@ -2,48 +2,53 @@
 @import "nullstyle.scss";
 // breakpoints
 // @import 'breakpoints.module.scss';
+
 html {
 	height: auto;
 }
 body {
-	margin: 0px auto;
-	font-family: 'Comic Neue', cursive;
-	background: dodgerblue linear-gradient(45deg, aqua, dodgerblue, deeppink) fixed;
+	margin: 0 auto;
+	color: rgb(42, 38, 38);
+	background: whitesmoke;
 }
 .wrapper {
-	// height: 100%;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 }
 .container {
 	width: 100vw;
-	// height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 }
-#myForm {
+form {
 	display: flex;
 	flex-direction: column;
-	padding: 20px;
-	margin: 50px auto ;
 	width: 600px;
+	height: 200px;
+	margin: 15px auto;
+	align-items: center;
+	// background-color: rgb(202, 190, 190);
 	box-shadow: rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 12%) 0px 1px 10px 0px;
 
 }
 span {
+	margin-top: 20px;
 	font-size: 20px;
 	font-weight: 700;
-	color: darkblue;
+	
 }
 input {
-	margin: 5px;
-	margin-bottom: 20px;
+	margin-top: 20px;
 	padding: 7px;
-	border: none;
+	width: 400px;
+	// background-color: whitesmoke;
+	border: 1px solid rgb(139, 136, 136);
 	border-radius: 5px;
+	// box-shadow: rgb(0 0 0 / 12%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 20%) 0px 1px 10px 0px;
+
 }
 ::-webkit-input-placeholder {
   text-align:center;
@@ -51,36 +56,32 @@ input {
 :-moz-placeholder {
   text-align: center;
 }
-#userName {}
-#userComment {
-	height: 100px;
-}
- #commentDate {
-	width: 100px;
-	padding: 5px;
-}
-#post {
+button {
+	// display: flex;
+	// flex-direction: column;
+	// align-items: center;
+	// justify-content: center;
+	margin-top: 30px;
 	width: 170px;
 	height: 40px;
 	border: none;
 	border-radius: 10px;
-	text-align: center;
+	vertical-align: middle;
 	background-color: transparent;
-	color: darkblue;
 	font-size: 12px;
 	font-weight: 700;
 	box-shadow: rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 12%) 0px 1px 10px 0px;
 }
-#post:hover{
-	background-color: rgb(63, 96, 217);
+button:hover{
+	background-color: rgb(223, 212, 212);
 }
-#comments {
+#searchResults {
 	width: 90vw;
 	display: flex;
 	flex-direction: column;
 	margin: 0px auto;
 }
-.comment {
+.searchResult {
 	display: flex;
 	flex-direction: column;
 	width: 70%;
@@ -88,61 +89,30 @@ input {
 	padding: 10px;
 	box-shadow: rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 12%) 0px 1px 10px 0px;
 }
-#userNameInComments {
+.userNameRow, .repoRow, .descRow {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 	padding-top: 5px;
-	font-size: 20px;
+}
+
+.descRow {
+	flex-wrap: wrap;
+}
+
+#userName, #userNameText {
+	padding-right: 5px;
+	font-size: 16px;
 	font-weight: 700;
 }
-#userCommentInComments {
-	padding-top: 5px;
+#repo, #repoText {
+	padding-right: 5px;
 	font-size: 16px;
 }
-.commentBottom {
-	margin-top: 15px;
-	display: flex;
-	align-items: center;
+#description, #descText {
+	padding-right: 5px;
+	font-size: 16px;
 }
-
-#commentDateTimeinComments {
-	width: 130px;
-	padding-top: 5px;
-	font-size: 14px;
+#userNameText, #repoText, #descText {
 	font-weight: 700;
-}
-.likeButton {
-	margin-left: 60px;
-	width: 30px;
-	height: 30px;
-	border: none;
-	border-radius: 5px;
-	text-align: center;
-	background-color: transparent;
-	// color: darkblue;
-	font-size: 10px;
-	font-weight: 700;
-	box-shadow: rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 12%) 0px 1px 10px 0px;
-}
-#red {
-	// background-color: red;
-	// color: red;
-}
-
-.likeButton:hover{
-	background-color: rgb(63, 96, 217);
-}
-.commentButton {
-	margin-left: 20px;
-	width: 30px;
-	height: 30px;
-	border: none;
-	border-radius: 5px;
-	text-align: center;
-	background-color: transparent;
-	color: darkblue;
-	font-size: 10px;
-	font-weight: 700;
-	box-shadow: rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 12%) 0px 1px 10px 0px;
-}
-.commentButton:hover{
-	background-color: rgb(63, 96, 217);
 }
