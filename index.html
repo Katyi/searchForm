@@ -13,7 +13,7 @@
     <container id="container">
       <form id="searchForm" onsubmit="getRepos();return false">
         <span>Найти 10 репозиториев github</span>
-        <input type="text" id="searchWord" value = "" placeholder="Поиск" required autocomplete="off">
+        <input type="text" id="searchWord" value = "" pattern=".{3,}" required title="3 символа минимум" placeholder="Поиск" autocomplete="off">
         <button type="submit" onsubmit="getRepos()">НАЙТИ</button>
       </form>
       <div id="searchResults"></div>

@@ -1,4 +1,6 @@
 async function getRepos() {
+    // e.preventDefault();
+
     usersinfo = [];
     document.getElementById('searchResults').remove();
     let div =document.createElement('div');
@@ -6,16 +8,24 @@ async function getRepos() {
     document.getElementById('container').append(div);
 
     let searchWord = document.getElementById('searchWord').value;
-    console.log(searchWord);
+
+
     fetch(`https://api.github.com/search/repositories?q=${searchWord}&per_page=10`)
     .then(response => !response.ok ? null : response.json())
     .then((data)=>{// ищем CommentsForm 
-        data.items.forEach(element => {
+      if (data.items.length === 0) {
+        let h1 = document.createElement('h1');
+        let declaration = document.createTextNode('Ничего не найдено :-(');
+        h1.append(declaration);
+        document.getElementById('searchResults').append(h1);
+      }
+        data.items.forEach((element, index) => {
           usersinfo.push({
             id: element.id,
             userName: element.owner.login,
             repo: element.name,
-            description: element.description
+            description: element.description,
+            html_url: element.html_url
           })
 
           div = document.createElement("div");
@@ -31,7 +41,7 @@ async function getRepos() {
           document.getElementById(searchResult).append(div);
 
           div = document.createElement('div');
-          let text = document.createTextNode('user:');
+          let text = document.createTextNode(`${index + 1}. user:`);
           div.id = 'userNameText';
           div.append(text);
           document.getElementById(userNameRow).append(div);
@@ -54,11 +64,13 @@ async function getRepos() {
           div.append(text);
           document.getElementById(repoRow).append(div);
 
-          div = document.createElement('div');
-          div.id = 'repo';
+          let a = document.createElement('a');
           let repo = document.createTextNode(element.name);
-          div.append(repo);
-          document.getElementById(repoRow).append(div);
+          a.id = 'repo';
+          a.href = element.html_url;
+          a.target = "_blank";
+          a.append(repo);
+          document.getElementById(repoRow).append(a);
 
           div = document.createElement('div');
           descRow = 'descRow' + element.id;
@@ -77,12 +89,11 @@ async function getRepos() {
           let description = document.createTextNode(element.description);
           div.append(description);
           document.getElementById(descRow).append(div);
-          
         });
+      })
+      .catch(error=>{
+        console.log(error);
       });
-  console.log(usersinfo);
-
-  document.getElementById("searchWord").value = "";
-
-  
+      console.log(usersinfo);
+      document.getElementById("searchWord").value = "";
 }

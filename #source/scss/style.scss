@@ -1,7 +1,7 @@
 // Файл обнуляющих стилей
 @import "nullstyle.scss";
 // breakpoints
-// @import 'breakpoints.module.scss';
+@import 'breakpoints.module.scss';
 
 html {
 	height: auto;
@@ -22,23 +22,26 @@ body {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	margin: auto;
 }
 form {
 	display: flex;
 	flex-direction: column;
 	width: 600px;
-	height: 200px;
-	margin: 15px auto;
+	// height: 200px;
+	margin: 25px auto;
 	align-items: center;
+	padding: 25px;
 	// background-color: rgb(202, 190, 190);
-	box-shadow: rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 12%) 0px 1px 10px 0px;
-
+	box-shadow: inset rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 12%) 0px 1px 10px 0px;
+	@include sm-breakpoint {
+		width: 90%;
+	}
 }
 span {
-	margin-top: 20px;
+	// margin-top: 20px;
 	font-size: 20px;
 	font-weight: 700;
-	
 }
 input {
 	margin-top: 20px;
@@ -47,8 +50,11 @@ input {
 	// background-color: whitesmoke;
 	border: 1px solid rgb(139, 136, 136);
 	border-radius: 5px;
-	// box-shadow: rgb(0 0 0 / 12%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 20%) 0px 1px 10px 0px;
+	// box-shadow: inset rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 12%) 0px 1px 10px 0px;
 
+	@include sm-breakpoint {
+		width: 90%;
+	}
 }
 ::-webkit-input-placeholder {
   text-align:center;
@@ -57,10 +63,6 @@ input {
   text-align: center;
 }
 button {
-	// display: flex;
-	// flex-direction: column;
-	// align-items: center;
-	// justify-content: center;
 	margin-top: 30px;
 	width: 170px;
 	height: 40px;
@@ -71,23 +73,33 @@ button {
 	font-size: 12px;
 	font-weight: 700;
 	box-shadow: rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 12%) 0px 1px 10px 0px;
+	@include xs-breakpoint {
+		width: 50%;
+	}
 }
-button:hover{
+button:hover, button:focus{
 	background-color: rgb(223, 212, 212);
 }
 #searchResults {
 	width: 90vw;
 	display: flex;
 	flex-direction: column;
-	margin: 0px auto;
+	margin: 25px auto;
+	@include sm-breakpoint {
+		width: 100%;
+	}
 }
 .searchResult {
 	display: flex;
 	flex-direction: column;
-	width: 70%;
+	width: 600px;
 	margin: 10px auto;
-	padding: 10px;
+	padding: 15px;
 	box-shadow: rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 12%) 0px 1px 10px 0px;
+	@include sm-breakpoint {
+		width: 90%;
+		padding: 10px;
+	}
 }
 .userNameRow, .repoRow, .descRow {
 	display: flex;
@@ -95,11 +107,9 @@ button:hover{
 	align-items: center;
 	padding-top: 5px;
 }
-
 .descRow {
 	flex-wrap: wrap;
 }
-
 #userName, #userNameText {
 	padding-right: 5px;
 	font-size: 16px;
@@ -109,10 +119,19 @@ button:hover{
 	padding-right: 5px;
 	font-size: 16px;
 }
+#repo {
+	color: blue;
+}
 #description, #descText {
 	padding-right: 5px;
 	font-size: 16px;
 }
 #userNameText, #repoText, #descText {
 	font-weight: 700;
+}
+h1 {
+	margin: 50px auto;
+	font-size: 25px;
+	font-weight: 700;
+	font-style: italic;
 }
