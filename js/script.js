@@ -1,14 +1,10 @@
 async function getRepos() {
-    // e.preventDefault();
-
     usersinfo = [];
     document.getElementById('searchResults').remove();
     let div =document.createElement('div');
     div.id = 'searchResults';
     document.getElementById('container').append(div);
-
     let searchWord = document.getElementById('searchWord').value;
-
 
     fetch(`https://api.github.com/search/repositories?q=${searchWord}&per_page=10`)
     .then(response => !response.ok ? null : response.json())

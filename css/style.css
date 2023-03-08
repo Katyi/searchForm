@@ -80,6 +80,12 @@ body {
   margin: 0 auto;
   color: rgb(42, 38, 38);
   background: whitesmoke;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  font-style: normal;
+  letter-spacing: 1px;
+  line-height: 22px;
 }
 
 .wrapper {
@@ -113,8 +119,7 @@ form {
 }
 
 span {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 24px;
 }
 
 input {
@@ -147,7 +152,6 @@ button {
   vertical-align: middle;
   background-color: transparent;
   font-size: 12px;
-  font-weight: 700;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
 }
 @media only screen and (max-width: 480px) {
@@ -156,8 +160,12 @@ button {
   }
 }
 
-button:hover, button:focus {
-  background-color: rgb(223, 212, 212);
+button:hover {
+  background-color: rgb(230, 228, 228);
+}
+
+button:focus {
+  border: 2px solid rgb(139, 153, 166);
 }
 
 #searchResults {
@@ -200,13 +208,10 @@ button:hover, button:focus {
 
 #userName, #userNameText {
   padding-right: 5px;
-  font-size: 16px;
-  font-weight: 700;
 }
 
 #repo, #repoText {
   padding-right: 5px;
-  font-size: 16px;
 }
 
 #repo {
@@ -215,7 +220,7 @@ button:hover, button:focus {
 
 #description, #descText {
   padding-right: 5px;
-  font-size: 16px;
+  text-align: justify;
 }
 
 #userNameText, #repoText, #descText {
@@ -225,6 +230,5 @@ button:hover, button:focus {
 h1 {
   margin: 50px auto;
   font-size: 25px;
-  font-weight: 700;
   font-style: italic;
 }

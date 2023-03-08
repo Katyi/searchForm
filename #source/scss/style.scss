@@ -10,6 +10,12 @@ body {
 	margin: 0 auto;
 	color: rgb(42, 38, 38);
 	background: whitesmoke;
+	font-family: 'Urbanist', sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	font-style: normal;
+	letter-spacing: 1px;
+	line-height: 22px;
 }
 .wrapper {
 	overflow: hidden;
@@ -28,30 +34,23 @@ form {
 	display: flex;
 	flex-direction: column;
 	width: 600px;
-	// height: 200px;
 	margin: 25px auto;
 	align-items: center;
 	padding: 25px;
-	// background-color: rgb(202, 190, 190);
 	box-shadow: inset rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 12%) 0px 1px 10px 0px;
 	@include sm-breakpoint {
 		width: 90%;
 	}
 }
 span {
-	// margin-top: 20px;
-	font-size: 20px;
-	font-weight: 700;
+	font-size: 24px;
 }
 input {
 	margin-top: 20px;
 	padding: 7px;
 	width: 400px;
-	// background-color: whitesmoke;
 	border: 1px solid rgb(139, 136, 136);
 	border-radius: 5px;
-	// box-shadow: inset rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 12%) 0px 1px 10px 0px;
-
 	@include sm-breakpoint {
 		width: 90%;
 	}
@@ -71,14 +70,16 @@ button {
 	vertical-align: middle;
 	background-color: transparent;
 	font-size: 12px;
-	font-weight: 700;
 	box-shadow: rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 12%) 0px 1px 10px 0px;
 	@include xs-breakpoint {
 		width: 50%;
 	}
 }
-button:hover, button:focus{
-	background-color: rgb(223, 212, 212);
+button:hover {
+	background-color: rgb(230, 228, 228);
+}
+button:focus{
+	border: 2px solid rgb(139, 153, 166);
 }
 #searchResults {
 	width: 90vw;
@@ -112,19 +113,16 @@ button:hover, button:focus{
 }
 #userName, #userNameText {
 	padding-right: 5px;
-	font-size: 16px;
-	font-weight: 700;
 }
 #repo, #repoText {
 	padding-right: 5px;
-	font-size: 16px;
 }
 #repo {
 	color: blue;
 }
 #description, #descText {
 	padding-right: 5px;
-	font-size: 16px;
+	text-align: justify;
 }
 #userNameText, #repoText, #descText {
 	font-weight: 700;
@@ -132,6 +130,5 @@ button:hover, button:focus{
 h1 {
 	margin: 50px auto;
 	font-size: 25px;
-	font-weight: 700;
 	font-style: italic;
 }
