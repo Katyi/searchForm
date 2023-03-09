@@ -107,7 +107,7 @@ form {
   display: flex;
   flex-direction: column;
   width: 600px;
-  margin: 25px auto;
+  margin: 50px auto 0px;
   align-items: center;
   padding: 25px;
   box-shadow: inset rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
@@ -177,7 +177,7 @@ button:focus {
   width: 90vw;
   display: flex;
   flex-direction: column;
-  margin: 25px auto;
+  margin: 30px auto 50px;
 }
 @media only screen and (max-width: 768px) {
   #searchResults {
