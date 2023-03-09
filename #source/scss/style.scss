@@ -55,6 +55,9 @@ input {
 		width: 90%;
 	}
 }
+input:focus {
+	border: 2px solid rgb(139, 153, 166);
+}
 ::-webkit-input-placeholder {
   text-align:center;
 }
@@ -70,6 +73,7 @@ button {
 	vertical-align: middle;
 	background-color: transparent;
 	font-size: 12px;
+	border: none;
 	box-shadow: rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 12%) 0px 1px 10px 0px;
 	@include xs-breakpoint {
 		width: 50%;

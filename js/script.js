@@ -1,11 +1,11 @@
 async function getRepos() {
-    usersinfo = [];
     document.getElementById('searchResults').remove();
     let div =document.createElement('div');
     div.id = 'searchResults';
     document.getElementById('container').append(div);
-    let searchWord = document.getElementById('searchWord').value;
 
+    let searchWord = document.getElementById('searchWord').value;
+    usersinfo = [];
     fetch(`https://api.github.com/search/repositories?q=${searchWord}&per_page=10`)
     .then(response => !response.ok ? null : response.json())
     .then((data)=>{// ищем CommentsForm 
@@ -90,6 +90,6 @@ async function getRepos() {
       .catch(error=>{
         console.log(error);
       });
-      console.log(usersinfo);
+      // console.log(usersinfo);
       document.getElementById("searchWord").value = "";
 }

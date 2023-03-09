@@ -135,6 +135,10 @@ input {
   }
 }
 
+input:focus {
+  border: 2px solid rgb(139, 153, 166);
+}
+
 ::-webkit-input-placeholder {
   text-align: center;
 }
@@ -152,6 +156,7 @@ button {
   vertical-align: middle;
   background-color: transparent;
   font-size: 12px;
+  border: none;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
 }
 @media only screen and (max-width: 480px) {
