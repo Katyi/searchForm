@@ -10,6 +10,7 @@ body {
 	margin: 0 auto;
 	color: rgb(42, 38, 38);
 	background: whitesmoke;
+	background-image: url('/img/bgPhoto.jpg');
 	font-family: 'Urbanist', sans-serif;
 	font-weight: 500;
 	font-size: 16px;
@@ -111,8 +112,9 @@ button:focus{
 	flex-direction: row;
 	align-items: center;
 	padding-top: 5px;
+	height: auto;
 }
-.descRow {
+.repoRow, .descRow {
 	flex-wrap: wrap;
 }
 #userName, #userNameText {
@@ -123,6 +125,7 @@ button:focus{
 }
 #repo {
 	color: blue;
+	word-break: break-word;
 }
 #description, #descText {
 	padding-right: 5px;
