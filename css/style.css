@@ -78,7 +78,6 @@ html {
 
 body {
   margin: 0 auto;
-  background: url("img/bgPhoto.jpg"), whitesmoke;
   color: rgb(42, 38, 38);
   font-family: "Urbanist", sans-serif;
   font-weight: 500;
@@ -86,6 +85,11 @@ body {
   font-style: normal;
   letter-spacing: 1px;
   line-height: 22px;
+  z-index: 1;
+}
+
+img {
+  z-index: -1;
 }
 
 .wrapper {
