@@ -3,14 +3,11 @@
 // breakpoints
 @import 'breakpoints.module.scss';
 
-$bgImg: url('/image/bgPhoto.jpg');
-
 html {
 	height: auto;
 }
 body {
 	margin: 0 auto;
-	background: $bgImg, whitesmoke;
 	color: rgb(42, 38, 38);
 	font-family: 'Urbanist', sans-serif;
 	font-weight: 500;
