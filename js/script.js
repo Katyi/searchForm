@@ -6,9 +6,9 @@ async function getRepos() {
 
     let searchWord = document.getElementById('searchWord').value;
     usersinfo = [];
-    fetch(`https://api.github.com/search/repositories?q=${searchWord}&per_page=10`)
+    await fetch(`https://api.github.com/search/repositories?q=${searchWord}&per_page=10`)
     .then(response => !response.ok ? null : response.json())
-    .then((data)=>{// ищем CommentsForm 
+    .then((data)=>{
       if (data.items.length === 0) {
         let h1 = document.createElement('h1');
         let declaration = document.createTextNode('Ничего не найдено :-(');
@@ -90,6 +90,5 @@ async function getRepos() {
       .catch(error=>{
         console.log(error);
       });
-      // console.log(usersinfo);
       document.getElementById("searchWord").value = "";
 }
