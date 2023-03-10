@@ -78,8 +78,8 @@ html {
 
 body {
   margin: 0 auto;
+  background: url("img/bgPhoto.jpg"), whitesmoke;
   color: rgb(42, 38, 38);
-  background: url("/img/bgPhoto.jpg");
   font-family: "Urbanist", sans-serif;
   font-weight: 500;
   font-size: 16px;
