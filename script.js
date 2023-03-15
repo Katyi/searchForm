@@ -7,9 +7,9 @@ async function getRepos() {
     let searchWord = document.getElementById('searchWord').value;
     usersinfo = [];
     await fetch(`https://api.github.com/search/repositories?q=${searchWord}&per_page=10`)
-    .then(response => !response.ok ? null : response.json())
+    .then(response => response.status !== 200 ? null : response.json())
     .then((data)=>{
-      if (data.items.length === 0) {
+      if (data === null || data.items.length === 0) {
         let h1 = document.createElement('h1');
         let declaration = document.createTextNode('Ничего не найдено :-(');
         h1.append(declaration);
