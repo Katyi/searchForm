@@ -1,20 +1,26 @@
 async function getRepos() {
-    document.getElementById('searchResults').remove();
-    let div =document.createElement('div');
-    div.id = 'searchResults';
-    document.getElementById('container').append(div);
+  document.getElementById('searchResults').remove();
+  let div =document.createElement('div');
+  div.id = 'searchResults';
+  document.getElementById('container').append(div);
 
-    let searchWord = document.getElementById('searchWord').value;
-    usersinfo = [];
-    await fetch(`https://api.github.com/search/repositories?q=${searchWord}&per_page=10`)
+  let searchWord = document.getElementById('searchWord').value;
+  usersinfo = [];
+  let h1 = document.createElement('h1');
+  let declaration = '';
+  await fetch(`https://api.github.com/search/repositories?q=${searchWord}&per_page=10`)
     .then(response => response.status !== 200 ? null : response.json())
     .then((data)=>{
-      if (data === null || data.items.length === 0) {
-        let h1 = document.createElement('h1');
-        let declaration = document.createTextNode('Ничего не найдено :-(');
-        h1.append(declaration);
-        document.getElementById('searchResults').append(h1);
+      if (data === null) {
+        declaration = document.createTextNode(
+          'Упс, ограничение Github скорости поиска без аутентификации - 10 запросов в минуту :-('
+        );
+      } else if (data.items.length === 0) {
+        declaration = document.createTextNode('Ничего не найдено :-(');
       }
+      h1.append(declaration);
+      
+      document.getElementById('searchResults').append(h1);
         data.items.forEach((element, index) => {
           usersinfo.push({
             id: element.id,
